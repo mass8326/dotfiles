@@ -20,7 +20,7 @@ cmp.setup(config)
 require("neo-tree").setup({
   window = {
     mappings = {
-      ["<LeftRelease>"] = "open",
+      ["<LeftRelease>"] = "toggle_node",
     },
   },
 })
