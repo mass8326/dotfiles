@@ -15,12 +15,3 @@ local cmp = require("cmp")
 local config = cmp.get_config()
 config.mapping["<Tab>"] = { i = cmp.mapping.confirm({ select = true }) }
 cmp.setup(config)
-
--- Single click file tree navigation
-require("neo-tree").setup({
-  window = {
-    mappings = {
-      ["<LeftRelease>"] = "toggle_node",
-    },
-  },
-})
