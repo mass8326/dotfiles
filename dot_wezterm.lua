@@ -16,6 +16,8 @@ end
 
 if is_linux() then
 	config.default_prog = { "/usr/bin/zsh" }
+else
+	config.default_prog = { "wsl" }
 end
 
 return config
