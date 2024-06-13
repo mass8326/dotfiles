@@ -1,0 +1,18 @@
+# omz setup
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="mass"
+
+plugins=(
+  composer
+  git
+  nvm
+  vi-mode
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# nvim setup
+export PATH="$PATH:/opt/nvim/bin"
+

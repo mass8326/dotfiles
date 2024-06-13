@@ -1,0 +1,8 @@
+# Use for debugging startup scripts
+# setopt SOURCE_TRACE
+
+# Load cargo
+. "$HOME/.cargo/env"
+
+# Load go
+export PATH="$PATH:/opt/go/bin:$HOME/go/bin"
