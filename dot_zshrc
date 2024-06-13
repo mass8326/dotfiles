@@ -7,8 +7,13 @@ ZSH_THEME="mass"
 plugins=(
   composer
   git
+  zsh-autosuggestions
+  you-should-use
   nvm
   vi-mode
+  fancy-ctrl-z
+  golang
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
