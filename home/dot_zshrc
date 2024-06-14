@@ -20,4 +20,5 @@ source $ZSH/oh-my-zsh.sh
 
 # nvim setup
 export PATH="$PATH:/opt/nvim/bin"
+export EDITOR="nvim"
 
