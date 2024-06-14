@@ -10,14 +10,27 @@ config.font = wezterm.font_with_fallback({
 	"monospace",
 })
 
+local is_windows = function()
+	return wezterm.target_triple:find("windows") ~= nil
+end
+
 local is_linux = function()
 	return wezterm.target_triple:find("linux") ~= nil
 end
 
 if is_linux() then
 	config.default_prog = { "/usr/bin/zsh" }
-else
+elseif is_windows() then
+	config.default_domain = "WSL:Ubuntu"
 	config.default_prog = { "wsl" }
+	config.launch_menu = { { args = { "cmd.exe" }, domain = { DomainName = "local" } } }
+	local wsl_domains = wezterm.default_wsl_domains()
+	for _, dom in ipairs(wsl_domains) do
+		if dom.name == "WSL:Ubuntu-20.04" then
+			dom.default_cwd = "~"
+		end
+		config.wsl_domains = wsl_domains
+	end
 end
 
 return config

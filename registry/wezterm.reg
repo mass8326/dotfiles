@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wezterm]
+@="Open WezTerm"
+"Extended"=""
+"icon"="C:\\Program Files\\WezTerm\\wezterm-gui.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wezterm\command]
+@="\"C:\\Program Files\\WezTerm\\wezterm-gui.exe\" start --no-auto-connect --cwd \"%V\""
