@@ -9,6 +9,20 @@ config.font = wezterm.font_with_fallback({
 	"Courier New",
 	"monospace",
 })
+config.skip_close_confirmation_for_processes_named = {
+	"bash",
+	"sh",
+	"zsh",
+	"fish",
+	"tmux",
+	"nu",
+	"cmd.exe",
+	"pwsh.exe",
+	"powershell.exe",
+	"wslhost.exe",
+	"wsl.exe",
+	"conhost.exe",
+}
 
 local is_windows = function()
 	return wezterm.target_triple:find("windows") ~= nil
