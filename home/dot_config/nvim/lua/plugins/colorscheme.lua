@@ -1,9 +1,9 @@
 return {
-  { "navarasu/onedark.nvim", opts = { style = "darker" } },
+  { "AstroNvim/astrotheme", opts = { palette = "astrodark" } },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "astrotheme",
     },
   },
 }
