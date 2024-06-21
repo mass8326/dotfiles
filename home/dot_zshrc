@@ -23,6 +23,9 @@ if [ -e "$HOME/.zshlocal" ]; then
   source "$HOME/.zshlocal"
 fi
 
+alias pg="pgrep -a"
+alias pk="pkill"
+
 # nvim setup
 export PATH="$PATH:/opt/nvim/bin"
 export EDITOR="nvim"
