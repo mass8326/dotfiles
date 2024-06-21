@@ -4,17 +4,3 @@
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll Down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll Up" })
-
-local wk = require("which-key")
-wk.register({
-  t = {
-    name = "telescope",
-    n = { "<cmd>Telescope notify<cr>", "Show notifications" },
-  },
-}, { prefix = "<leader>" })
-
--- Tab to confirm completion
-local cmp = require("cmp")
-local config = cmp.get_config()
-config.mapping["<Tab>"] = { i = cmp.mapping.confirm({ select = true }) }
-cmp.setup(config)
