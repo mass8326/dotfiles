@@ -1,5 +1,9 @@
-vim.cmd([[cnoreabbrev w!! SudaWrite]])
-
 return {
-  { "lambdalisue/suda.vim", event = "VeryLazy" },
+  {
+    "lambdalisue/suda.vim",
+    event = "CmdlineEnter",
+    config = function()
+      vim.cmd.cnoreabbrev({ "w!!", "SudaWrite" })
+    end,
+  },
 }
