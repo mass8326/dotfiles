@@ -31,5 +31,6 @@ fi
 # nvim
 if [ -d "/opt/nvim" ]; then
 	export PATH="$PATH:/opt/nvim/bin"
+	export XDG_DATA_DIRS="$XDG_DATA_DIRS:/opt/nvim/share"
 	export EDITOR="nvim"
 fi
