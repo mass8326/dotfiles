@@ -13,6 +13,7 @@ plugins=(
   vi-mode
   # Utilities
   chezmoi
+  fzf
   git
   nvims
   # Languages
@@ -27,3 +28,5 @@ source $ZSH/oh-my-zsh.sh
 
 alias pg="pgrep -a"
 alias pk="pkill"
+alias pf='ps aux | fzf | awk "{print $2}" | xargs kill'
+alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --multi | xargs -0 -t git add"
