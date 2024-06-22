@@ -6,13 +6,16 @@ export ZSH_CUSTOM="$HOME/.config/omz/custom"
 ZSH_THEME="mass"
 
 plugins=(
-  composer
-  git
+  # Quality of life
+  zsh-syntax-highlighting
   zsh-autosuggestions
   you-should-use
-  nvm
   vi-mode
-  fancy-ctrl-z
+  # Utilities
+  chezmoi
+  git
+  # Languages
+  nvm
   golang
   rust
 )

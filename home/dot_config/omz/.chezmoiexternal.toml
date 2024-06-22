@@ -6,12 +6,12 @@ stripComponents = 1
 exclude = ["*/custom", "*/cache", "*/*.md", "*/.*"]
 refreshPeriod = "168h"
 
-[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+["custom/plugins/zsh-syntax-highlighting"]
 type = "archive"
 url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
 exact = true
 stripComponents = 1
-include = ["*/*.zsh", "*/highlighters/**"]
+include = ["*/*.zsh", "*/highlighters/**", "*/.version", "*/.revision-hash"]
 refreshPeriod = "168h"
 
 ["custom/plugins/zsh-autosuggestions"]
