@@ -5,6 +5,9 @@ export ZSH_CUSTOM="$ZDOTDIR/custom"
 
 ZSH_THEME="mass"
 
+# Must define git aliases before initializing omz so that chezmoi plugin will detect them
+alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --multi | xargs -0 -t git add"
+
 plugins=(
   # Quality of life
   zsh-syntax-highlighting
@@ -12,9 +15,9 @@ plugins=(
   you-should-use
   vi-mode
   # Utilities
+  git
   chezmoi
   fzf
-  git
   nvims
   # Languages
   nvm
@@ -29,4 +32,3 @@ source $ZSH/oh-my-zsh.sh
 alias pg="pgrep -a"
 alias pk="pkill"
 alias pf='ps aux | fzf | awk "{print $2}" | xargs kill'
-alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --multi | xargs -0 -t git add"
