@@ -1,0 +1,35 @@
+# Contents of this file apply on login only
+
+# bash login compatibility
+if [ -n "$BASH_VERSION" ]; then
+	if [ -f "$HOME/.bashrc" ]; then
+		. "$HOME/.bashrc"
+	fi
+fi
+
+# home binary paths
+if [ -d "$HOME/bin" ]; then
+	PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
+
+# rust
+if [ -f "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env"
+fi
+
+# go
+if [ -d "/opt/go/bin" ]; then
+	export PATH="$PATH:/opt/go/bin"
+fi
+if [ -d "$HOME/go/bin" ]; then
+	export PATH="$PATH:$HOME/go/bin"
+fi
+
+# nvim
+if [ -d "/opt/nvim" ]; then
+	export PATH="$PATH:/opt/nvim/bin"
+	export EDITOR="nvim"
+fi

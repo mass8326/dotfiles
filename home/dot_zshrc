@@ -19,14 +19,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -e "$HOME/.zshlocal" ]; then
-  source "$HOME/.zshlocal"
-fi
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
 
 alias pg="pgrep -a"
 alias pk="pkill"
-
-# nvim setup
-export PATH="$PATH:/opt/nvim/bin"
-export EDITOR="nvim"
-
