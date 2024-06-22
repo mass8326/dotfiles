@@ -4,4 +4,6 @@
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll Down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll Up" })
+
 vim.keymap.set("n", ";", ":", { desc = "Open Cmdline" })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Quick Leave Insert Mode" })
