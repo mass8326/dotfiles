@@ -1,7 +1,7 @@
 # omz setup
 
-export ZSH="$HOME/.config/omz/master"
-export ZSH_CUSTOM="$HOME/.config/omz/custom"
+export ZSH="$ZDOTDIR/omz"
+export ZSH_CUSTOM="$ZDOTDIR/custom"
 
 ZSH_THEME="mass"
 

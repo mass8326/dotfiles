@@ -1,2 +1,4 @@
 # Use for debugging startup scripts
 # setopt SOURCE_TRACE
+
+ZDOTDIR="$HOME/.config/zsh"

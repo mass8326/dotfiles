@@ -1,12 +1,12 @@
-["master"]
+["omz"]
 type = "archive"
 url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
 exact = true
 stripComponents = 1
-exclude = ["*/custom", "*/cache", "*/*.md", "*/.*"]
+exclude = ["*/omz", "*/custom", "*/cache", "*/*.md", "*/.*"]
 refreshPeriod = "168h"
 
-["custom/plugins/zsh-syntax-highlighting"]
+["omz/plugins/zsh-syntax-highlighting"]
 type = "archive"
 url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
 exact = true
@@ -14,7 +14,7 @@ stripComponents = 1
 include = ["*/*.zsh", "*/highlighters/**", "*/.version", "*/.revision-hash"]
 refreshPeriod = "168h"
 
-["custom/plugins/zsh-autosuggestions"]
+["omz/plugins/zsh-autosuggestions"]
 type = "archive"
 url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
 exact = true
@@ -22,7 +22,7 @@ stripComponents = 1
 include = ["*/*.zsh"]
 refreshPeriod = "168h"
 
-["custom/plugins/you-should-use"]
+["omz/plugins/you-should-use"]
 type = "archive"
 url = "https://github.com/MichaelAquilina/zsh-you-should-use/archive/master.tar.gz"
 exact = true
