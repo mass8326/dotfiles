@@ -37,7 +37,6 @@ if is_linux() then
 	config.default_prog = { "/usr/bin/zsh" }
 elseif is_windows() then
 	config.default_domain = "WSL:Ubuntu"
-	config.default_prog = { "wsl" }
 	config.launch_menu = { { args = { "cmd.exe" }, domain = { DomainName = "local" } } }
 	local wsl_domains = wezterm.default_wsl_domains()
 	for _, dom in ipairs(wsl_domains) do
