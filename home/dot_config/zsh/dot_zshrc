@@ -27,7 +27,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+[ -f "$ZDOTDIR/.zshrc.local" ] && source "$ZDOTDIR/.zshrc.local"
 
 (( $+commands[pnpm] )) && source <(pnpm completion zsh)
 
