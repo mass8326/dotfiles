@@ -29,6 +29,8 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
 
+(( $+commands[pnpm] )) && source <(pnpm completion zsh)
+
 alias pg="pgrep -a"
 alias pk="pkill"
 alias pf='ps aux | fzf | awk "{print $2}" | xargs kill'
