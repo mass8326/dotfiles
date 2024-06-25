@@ -3,13 +3,6 @@ local config = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
 config.use_resize_increments = true
-config.font = wezterm.font_with_fallback({
-	"DejaVuSansM Nerd Font",
-	"Droid Sans Mono",
-	"Consolas",
-	"Courier New",
-	"monospace",
-})
 config.skip_close_confirmation_for_processes_named = {
 	"bash",
 	"sh",
@@ -46,5 +39,25 @@ elseif is_windows() then
 		config.wsl_domains = wsl_domains
 	end
 end
+
+config.keys = {
+	{
+		key = "_",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "|",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "W",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+}
+local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
+smart_splits.apply_to_config(config)
 
 return config
