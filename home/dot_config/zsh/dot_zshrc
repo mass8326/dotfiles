@@ -20,7 +20,7 @@ plugins=(
   fzf
   nvims
   # Languages
-  nvm
+  zsh-nvm
   golang
   rust
 )

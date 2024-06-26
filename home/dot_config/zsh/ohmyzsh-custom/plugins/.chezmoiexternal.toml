@@ -26,3 +26,8 @@ exact = true
 stripComponents = 1
 include = ["*/*.zsh"]
 refreshPeriod = "168h"
+
+["zsh-nvm"]
+type = "git-repo"
+url = "https://github.com/lukechilds/zsh-nvm.git"
+refreshPeriod = "168h"
