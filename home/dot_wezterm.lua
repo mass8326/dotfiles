@@ -3,6 +3,7 @@ local config = wezterm.config_builder()
 
 config.hide_tab_bar_if_only_one_tab = true
 config.use_resize_increments = true
+config.font = wezterm.font_with_fallback({ "Inconsolata Nerd Font" })
 config.skip_close_confirmation_for_processes_named = {
 	"bash",
 	"sh",
@@ -39,6 +40,24 @@ elseif is_windows() then
 		config.wsl_domains = wsl_domains
 	end
 end
+
+config.mouse_bindings = {
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "NONE",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "ALT",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	},
+	{
+		event = { Down = { streak = 1, button = "Left" } },
+		mods = "ALT",
+		action = wezterm.action.Nop,
+	},
+}
 
 config.keys = {
 	{
