@@ -79,4 +79,9 @@ config.keys = {
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 smart_splits.apply_to_config(config)
 
+config.inactive_pane_hsb = {
+  saturation = 0.90,
+  brightness = 0.50,
+}
+
 return config
