@@ -20,7 +20,8 @@ return {
         },
         window = {
           mappings = {
-            ["<LeftRelease>"] = "toggle_node",
+            ["<Right>"] = "open",
+            ["<Left>"] = "close_node",
           },
         },
       },
