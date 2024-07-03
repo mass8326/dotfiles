@@ -15,5 +15,14 @@ if not pcall(require, "lazy") then
 	vim.cmd.quit()
 end
 
-require("lazy_setup")
+require("bootstrap")
 require("polish")
+
+require("config.options")
+  vim.api.nvim_create_autocmd("User", {
+    group = group,
+    pattern = "VeryLazy",
+    callback = function()
+require("config.keymaps")
+    end,
+  })
