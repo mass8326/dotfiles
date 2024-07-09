@@ -18,7 +18,6 @@ plugins=(
   git
   chezmoi
   fzf
-  nvims
   # Languages
   zsh-nvm
   golang
