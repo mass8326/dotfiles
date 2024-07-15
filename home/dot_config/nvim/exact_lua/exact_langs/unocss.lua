@@ -8,7 +8,7 @@ return {
             ["textDocument/documentHighlight"] = function() end,
           },
         },
-      },
+      }
     },
   },
 }

@@ -16,7 +16,7 @@ return {
           },
         })
       end,
-      desc = "Find In Chezmoi",
+      desc = "Find in chezmoi",
     },
   },
 }
