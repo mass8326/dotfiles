@@ -7,4 +7,5 @@ return {
 	{ import = "astrocommunity.pack.svelte" },
 	{ import = "astrocommunity.pack.typescript" },
 	{ import = "astrocommunity.project.nvim-spectre" },
+	{ import = "astrocommunity.fuzzy-finder.fzf-lua" },
 }
