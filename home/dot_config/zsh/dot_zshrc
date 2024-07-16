@@ -28,7 +28,8 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f "$ZDOTDIR/.zshrc.local" ] && source "$ZDOTDIR/.zshrc.local"
 
-(( $+commands[pnpm] )) && source <(pnpm completion zsh)
+# cd is needed to prevent corepack from triggering on "packageManager"
+(( $+commands[pnpm] )) && source <(cd ~ && pnpm completion zsh)
 
 alias pg="pgrep -a"
 alias pk="pkill"
