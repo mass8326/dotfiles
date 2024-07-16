@@ -33,6 +33,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias pg="pgrep -a"
 alias pk="pkill"
+alias pfg="pgrep -fa"
+alias pfk="pkill -f"
 alias pf="ps aux | fzf | awk '{print $2}' | xargs kill"
 alias rt="cd $(git rev-parse --show-top-level)"
 
@@ -42,14 +44,14 @@ function pnf() {
     return 1
   fi
 
-  packages=$(find . -type d -name node_modules -prune -o -name package.json -print)
+  packages=$(find . -type d \( -name node_modules -o -path '*/.*' \) -prune -o -name package.json -print)
   if [[ -z $packages ]]; then
     echo "Error: There's no 'package.json'"
     return 1
   elif [[ $packages = "./package.json" ]]; then
     package=$packages
   else
-    package=$(echo $packages | fzf --height 40%)
+    package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac)
   fi
 
   if [[ -z $package ]]; then
@@ -58,9 +60,9 @@ function pnf() {
   fi
   
   cd $(dirname $package)
-  scripts=$(cat package.json | jq .scripts | sed '1d;$d' | fzf --height 40%)
+  scripts=$(cat package.json | jq .scripts | sed '1d;$d' | fzf --prompt="package.json script 󰄾 " --height ~50% --layout=reverse --border)
   if [[ -z $scripts ]]; then
-    echo "Exit: You didn't select a script"
+    echo "Exit: You didn't select a package.json script"
     return 1
   fi
 
