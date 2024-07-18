@@ -39,7 +39,7 @@ alias pf="ps aux | fzf | awk '{print $2}' | xargs kill"
 alias rt="cd $(git rev-parse --show-top-level)"
 
 function pnf() {
-  if [[ $+commands[jq] -ne 1 ]]; then
+  if [[ $+commands[jq] != 1 ]]; then
     echo "Error: Could not find executable 'jq'"
     return 1
   fi
@@ -48,10 +48,8 @@ function pnf() {
   if [[ -z $packages ]]; then
     echo "Error: There's no 'package.json'"
     return 1
-  elif [[ $packages = "./package.json" ]]; then
-    package=$packages
   else
-    package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac)
+    package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
   if [[ -z $package ]]; then
@@ -59,14 +57,15 @@ function pnf() {
     return 1
   fi
   
-  cd $(dirname $package)
-  scripts=$(cat package.json | jq .scripts | sed '1d;$d' | fzf --prompt="package.json script 󰄾 " --height ~50% --layout=reverse --border)
+  scripts=$(cat $package | jq .scripts | sed '1d;$d' | fzf --prompt="$package script 󰄾 " --height ~50% --layout=reverse --border)
   if [[ -z $scripts ]]; then
     echo "Exit: You didn't select a package.json script"
     return 1
   fi
-
-  script_name=$(echo $scripts | awk -F ': ' '{gsub(/[" ]/, "", $1); print $1}')
-  echo "pnpm run $script_name"
-  pnpm run $script_name
+  
+  dir=$(dirname $package)
+  script=$(echo $scripts | awk -F ': ' '{gsub(/[" ]/, "", $1); print $1}')
+  cmd="(cd $dir && pnpm run $script)"
+  print -s $cmd
+  eval $cmd
 }
