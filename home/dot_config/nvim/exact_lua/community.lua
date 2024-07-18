@@ -6,6 +6,6 @@ return {
 	{ import = "astrocommunity.pack.lua" },
 	{ import = "astrocommunity.pack.svelte" },
 	{ import = "astrocommunity.pack.typescript" },
-	{ import = "astrocommunity.project.nvim-spectre" },
+	{ import = "astrocommunity.search.nvim-spectre" },
 	{ import = "astrocommunity.fuzzy-finder.fzf-lua" },
 }
