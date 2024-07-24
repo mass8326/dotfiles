@@ -44,12 +44,12 @@ function pnf() {
     return 1
   fi
 
-  packages=$(find . -type d \( -name node_modules -o -path '*/.*' \) -prune -o -name package.json -print)
+  local packages=$(find . -type d \( -name node_modules -o -path '*/.*' \) -prune -o -name package.json -print)
   if [[ -z $packages ]]; then
     echo "Error: There's no 'package.json'"
     return 1
   else
-    package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
+    local package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
   if [[ -z $package ]]; then
@@ -57,14 +57,14 @@ function pnf() {
     return 1
   fi
   
-  scripts=$(cat $package | jq .scripts | sed '1d;$d' | fzf --prompt="$package script 󰄾 " --height ~50% --layout=reverse --border)
+  local scripts=$(cat $package | jq .scripts | sed '1d;$d' | fzf --prompt="$package script 󰄾 " --height ~50% --layout=reverse --border)
   if [[ -z $scripts ]]; then
     echo "Exit: You didn't select a package.json script"
     return 1
   fi
   
-  dir=$(dirname $package)
-  script=$(echo $scripts | awk -F ': ' '{gsub(/[" ]/, "", $1); print $1}')
+  local dir=$(dirname $package)
+  local script=$(echo $scripts | awk -F ': ' '{gsub(/[" ]/, "", $1); print $1}')
   cmd="(cd $dir && pnpm run $script)"
   print -s $cmd
   eval $cmd
