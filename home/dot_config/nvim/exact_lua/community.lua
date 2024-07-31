@@ -24,6 +24,12 @@ return {
             end,
             desc = "Go to symbol definition",
           },
+          grr = {
+            function()
+              require("fzf-lua").lsp_references()
+            end,
+            desc = "Go to symbol references",
+          },
         },
       },
     },
