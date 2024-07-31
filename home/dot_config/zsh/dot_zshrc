@@ -32,11 +32,13 @@ source $ZSH/oh-my-zsh.sh
 (( $+commands[pnpm] )) && source <(cd ~ && pnpm completion zsh)
 
 alias pg="pgrep -a"
+alias pgf="pgrep -fa"
 alias pk="pkill"
-alias pfg="pgrep -fa"
-alias pfk="pkill -f"
-alias pf="ps aux | fzf | awk '{print $2}' | xargs kill"
+alias pkf="pkill -f"
+alias pfz="ps aux | fzf | awk '{print $2}' | xargs kill"
 alias rt='cd $(git rev-parse --show-toplevel)'
+alias xcfgr="systemctl --user restart xautocfg.service"
+alias xcfgj="journalctl --user-unit xautocfg.service"
 
 function pnf() {
   if [[ $+commands[jq] != 1 ]]; then
