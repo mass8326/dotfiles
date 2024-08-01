@@ -2,15 +2,16 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.editing-support.conform-nvim" },
+  { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
+  { import = "astrocommunity.motion.harpoon" },
+  { import = "astrocommunity.neovim-lua-development/lazydev-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.search.nvim-spectre" },
-  {
-    import = "astrocommunity.fuzzy-finder.fzf-lua",
-  },
+  { import = "astrocommunity.fuzzy-finder.fzf-lua" },
   {
     ---@module "astrolsp"
     "AstroNvim/astrolsp",
