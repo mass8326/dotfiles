@@ -2,6 +2,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.editing-support.conform-nvim" },
+  { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   { import = "astrocommunity.motion.harpoon" },
   { import = "astrocommunity.neovim-lua-development/lazydev-nvim" },
