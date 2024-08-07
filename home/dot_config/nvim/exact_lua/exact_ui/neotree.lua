@@ -25,38 +25,23 @@ return {
     {
       "<leader>e",
       function()
-        local root = require("astrocore.rooter").detect(nil, false)[1]
+        vim.cmd("UndotreeHide")
+        local bufno = vim.api.nvim_get_current_buf()
+        local bufname = vim.api.nvim_buf_get_name(bufno)
+        local root = require("astrocore.rooter").detect(bufno, false)[1]
         if root ~= nil and root.paths[1] ~= nil then
           vim.api.nvim_set_current_dir(root.paths[1])
         end
-        require("neo-tree.command").execute({ action = "show", reveal = true })
+        require("neo-tree.command").execute({ action = "show", reveal_file = bufname })
       end,
-      desc = "Reveal current file in explorer (root)",
+      desc = "Open file explorer",
     },
     {
       "<leader>E",
       function()
-        require("neo-tree.command").execute({ action = "show", reveal = true })
+        require("neo-tree.command").execute({ action = "close", reveal = true })
       end,
-      desc = "Reveal current file in explorer (cwd)",
-    },
-    {
-      "<leader>o",
-      function()
-        local root = require("astrocore.rooter").detect(nil, false)[1]
-        if root ~= nil and root.paths[1] ~= nil then
-          vim.api.nvim_set_current_dir(root.paths[1])
-        end
-        require("neo-tree.command").execute({ action = "show", toggle = true })
-      end,
-      desc = "Toggle explorer (root)",
-    },
-    {
-      "<leader>O",
-      function()
-        require("neo-tree.command").execute({ action = "show", toggle = true })
-      end,
-      desc = "Toggle explorer (cwd)",
+      desc = "Close file explorer",
     },
   },
 }
