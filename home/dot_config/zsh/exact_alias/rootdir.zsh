@@ -1,7 +1,7 @@
 alias rt='cd $(git rev-parse --show-toplevel)'
 
 function rtc() {
-  _rt_get_package ./*/*
+  _rt_get_package ./*/ || return 1
   local dir=$(dirname $package)
   cmd="cd $dir"
   print -s $cmd
@@ -14,7 +14,7 @@ function rtr() {
     return 1
   fi
 
-  _rt_get_package .
+  _rt_get_package . || return 1
   
   local scripts=$(cat $package | jq .scripts | sed '1d;$d' | fzf --prompt="$package script 󰄾 " --height ~50% --layout=reverse --border)
   if [[ -z $scripts ]]; then
@@ -34,7 +34,12 @@ function rtr() {
 }
 
 function _rt_get_package() {
-  local packages=$(find $@ -type d \( -name node_modules -o -path '*/.*' \) -prune -o -name package.json -print)
+  if [[ $+commands[fd] != 1 ]]; then
+    echo "Error: Could not find executable 'fd'"
+    return 1
+  fi
+
+  local packages=$(fd package.json $@ | sort | awk '{print gsub("/", "/") " " $0}' | sort -nr | cut -d' ' -f2-)
   if [[ -z $packages ]]; then
     echo "Error: There's no child 'package.json'"
     return 1
