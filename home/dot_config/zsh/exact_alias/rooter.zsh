@@ -6,7 +6,7 @@ alias rt='cd $(git rev-parse --show-toplevel)'
 
 function rtc() {
   _rtfn_get_package ./*/ || return 1
-  local dir=$(dirname $package)
+  local dir=$(dirname $_rt_package)
   local cmd="cd $dir"
   print -s $cmd
   eval $cmd
@@ -60,7 +60,7 @@ function _rtfn_get_package() {
     _rt_package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
-  if [[ -z $package ]]; then
+  if [[ -z $_rt_package ]]; then
     echo "Exit: You didn't select a package.json file"
     return 1
   fi
