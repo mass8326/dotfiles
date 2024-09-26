@@ -18,16 +18,10 @@ return {
           n = {
             ["<Leader>o"] = {
               function()
-                require("neo-tree.command").execute({ action = "close", reveal = true })
-                vim.cmd("UndotreeShow")
+                require("neo-tree.command").execute({ action = "close" })
+                vim.cmd("UndotreeToggle")
               end,
-              desc = "Show undotree",
-            },
-            ["<Leader>O"] = {
-              function()
-                vim.cmd("UndotreeHide")
-              end,
-              desc = "Show undotree",
+              desc = "Toggle undotree",
             },
           },
         },
