@@ -16,6 +16,7 @@ plugins=(
   zsh-autosuggestions
   you-should-use
   vi-mode
+  virtualenv
   # Utilities
   ssh-agent
   git

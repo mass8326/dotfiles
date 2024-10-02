@@ -15,12 +15,16 @@ local full_dir="%F{blue}%~%f"
 local exit_code="%F{red}%? ↵%f"
 RPS1='%(?.${full_dir}.${exit_code})%{$reset_color%}'
 
-# vi-mode
+# virtualenv_prompt_info
+ZSH_THEME_VIRTUALENV_PREFIX="%F{magenta}["
+ZSH_THEME_VIRTUALENV_SUFFIX="]%f "
+
+# vi_mode_prompt_info
 MODE_INDICATOR="%F{red}${privilege}%f"
 INSERT_MODE_INDICATOR="%F{white}${privilege}%f"
 VI_MODE_SET_CURSOR=true
 
-# git
+# git_prompt_info
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%f "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
