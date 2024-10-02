@@ -5,16 +5,15 @@ return {
       winbar = true,
     },
     filesystem = {
-      buffers = {
-        follow_current_file = { enabled = true },
-      },
       filtered_items = {
-        visible = false,
+        visible = true,
         hide_dotfiles = false,
         hide_gitignored = true,
         hide_by_name = { "node_modules" },
-        never_show = { ".git" },
-        follow_current_file = { enabled = false },
+        never_show = { ".git", ".pnpm" },
+        never_show_by_pattern = {
+          "**/node_modules/**/node_modules",
+        },
       },
       window = {
         mappings = {
