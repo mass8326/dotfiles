@@ -1,25 +1,11 @@
 ---@type LazySpec
 return {
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertCharPre",
-    opts = {
-      timeout = 500,
-      mappings = {
-        i = {
-          [","] = {
-            h = "<Esc>",
-          },
-        },
-      },
-    },
-  },
   -- Conflicts with my desired yanky keymaps
   {
     "stevearc/aerial.nvim",
     opts = {
       keymaps = {},
-      on_attach = function(bufnr)
+      on_attach = function()
         return false
       end,
     },

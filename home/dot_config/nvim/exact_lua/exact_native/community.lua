@@ -14,7 +14,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.test.neotest" },
   {

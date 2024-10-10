@@ -1,4 +1,4 @@
----@type LazySpec
+---@type LazySpec[]
 local spec = {
   {
     ---@module "AstroNvim/AstroNvim"
@@ -14,29 +14,20 @@ local spec = {
       update_notifications = true,
     },
   },
+  { import = "common" },
 }
 
----@type LazySpecImport[]
-local native = {
-  { import = "community" },
-  { import = "ui" },
-  { import = "langs" },
-  { import = "plugins" },
+local swap = vim.g.vscode and {
+  { import = "vsc" },
+} or {
+  { import = "native" },
+  { import = "native/langs" },
+  { import = "native/plugins" },
+  { import = "native/ui" },
 }
 
----@type LazySpecImport[]
-local vscode = {
-  { import = "code" },
-}
-
-if vim.g.vscode then
-  for _, v in ipairs(vscode) do
-    table.insert(spec, v)
-  end
-else
-  for _, v in ipairs(native) do
-    table.insert(spec, v)
-  end
+for _, val in ipairs(swap) do
+  table.insert(spec, val)
 end
 
 ---@type LazyConfig

@@ -122,9 +122,6 @@ return {
     event = "User AstroFile",
     opts = function(_, opts)
       local ai = require("mini.ai")
-      vim.schedule(function()
-        ai_whichkey(opts)
-      end)
       return {
         n_lines = 500,
         custom_textobjects = {
@@ -154,9 +151,12 @@ return {
     end,
     config = function(_, opts)
       require("mini.ai").setup(opts)
-      vim.schedule(function()
-        ai_whichkey(opts)
-      end)
+      if not vim.g.vscode then
+        local callback = function()
+          ai_whichkey(opts)
+        end
+        vim.schedule(callback)
+      end
     end,
   },
   {
