@@ -119,8 +119,8 @@ return {
   {
     "echasnovski/mini.ai",
     version = "*",
-    event = "User AstroFile",
-    opts = function(_, opts)
+    keys = { "v", "y", "d", "c" },
+    opts = function()
       local ai = require("mini.ai")
       return {
         n_lines = 500,
@@ -162,7 +162,7 @@ return {
   {
     "echasnovski/mini.surround",
     version = "*",
-    keys = { "gsa", "gsd", "gsf", "gsF", "gsh", "gsr", "gsn" },
+    event = "BufEnter",
     opts = {
       mappings = {
         add = "gsa", -- Add surrounding in Normal and Visual modes
