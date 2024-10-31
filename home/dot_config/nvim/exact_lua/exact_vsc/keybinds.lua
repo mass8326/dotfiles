@@ -24,8 +24,4 @@ return {
       end
     end,
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-  },
 }
