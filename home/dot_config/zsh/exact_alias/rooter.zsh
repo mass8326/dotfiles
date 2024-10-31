@@ -12,6 +12,17 @@ function rtc() {
   eval $cmd
 }
 
+function rtct() {
+  if [[ $TERM_PROGRAM = "WezTerm" ]]; then
+    _rtfn_get_package ./*/ || return 1
+    local dir=$(dirname $_rt_package)
+    wezterm cli spawn --cwd $dir
+  else
+    echo "Supported terminal not detected, falling back to 'rtc'"
+    rtc
+  fi
+}
+
 function rts() {
   if [[ -f "package.json" ]]; then
     _rt_package="package.json"
