@@ -6,7 +6,6 @@ return {
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   { import = "astrocommunity.motion.harpoon" },
-  { import = "astrocommunity.neovim-lua-development/lazydev-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.go" },
