@@ -1,0 +1,10 @@
+chea=chezmoi edit --apply
+chgaa=chezmoi git -- add --all
+chgc=chezmoi git -- commit
+chgp=chezmoi git -- push
+chgst=chezmoi git -- status
+gaa=git add --all
+gc=git commit
+gp=git push
+gst=git status
+ls=dir
