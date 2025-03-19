@@ -1,34 +1,32 @@
----@type LazySpec[]
-local spec = {
-  {
-    ---@module "AstroNvim/AstroNvim"
-    "AstroNvim/AstroNvim",
-    version = "^4",
-    import = "astronvim.plugins",
-    ---@type AstroNvimOpts
-    opts = {
-      mapleader = " ",
-      maplocalleader = ",",
-      icons_enabled = true,
-      pin_plugins = nil,
-      update_notifications = true,
-    },
+---@type LazySpec
+local astro = {
+  ---@module "AstroNvim/AstroNvim"
+  "AstroNvim/AstroNvim",
+  version = "^4",
+  import = "astronvim.plugins",
+  ---@type AstroNvimOpts
+  opts = {
+    mapleader = " ",
+    maplocalleader = ",",
+    icons_enabled = true,
+    pin_plugins = nil,
+    update_notifications = true,
   },
-  { import = "common" },
 }
 
-local swap = vim.g.vscode and {
+---@type LazySpec[]
+local spec = vim.g.vscode and {
+  astro,
+  { import = "common" },
   { import = "vsc" },
 } or {
+  astro,
+  { import = "common" },
   { import = "native" },
   { import = "native/langs" },
   { import = "native/plugins" },
   { import = "native/ui" },
 }
-
-for _, val in ipairs(swap) do
-  table.insert(spec, val)
-end
 
 ---@type LazyConfig
 local config = {
