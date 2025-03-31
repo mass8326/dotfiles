@@ -4,7 +4,7 @@ local utils = require("utils")
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  local index = tab.tab_index + 1
+  local index = tab.tab_index
   local title = tab.tab_title
   if not title or #title == 0 then
     if utils.is_windows() then
@@ -12,7 +12,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     else
       local pane = tab.active_pane
       local name = utils.basename(pane.foreground_process_name)
-      if name == "zsh" then
+      if name == "zsh" or name == "wsl.exe" or name == "wslhost.exe" then
         name = utils.basename(pane.title)
       end
       local added_chars = 5 + string.len(tostring(index))
