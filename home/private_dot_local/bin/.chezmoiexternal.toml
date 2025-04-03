@@ -1,3 +1,8 @@
+["docker-credential-secretservice"]
+type = "file"
+url = "https://github.com/docker/docker-credential-helpers/releases/download/v0.9.3/docker-credential-pass-v0.9.3.linux-amd64"
+executable = true
+
 ["fd"]
 type = "archive-file"
 url = "https://github.com/sharkdp/fd/releases/download/v10.1.0/fd-v10.1.0-x86_64-unknown-linux-musl.tar.gz"
