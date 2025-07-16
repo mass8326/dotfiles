@@ -1,0 +1,19 @@
+{
+    "layer": "top",
+    "include": [
+        "~/.config/waybar/modules-left.json",
+        "~/.config/waybar/modules.json"
+    ],
+    "modules-left": [
+        "custom/apps",
+        "hyprland/workspaces",
+        "group/quicklinks"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+    ]
+}

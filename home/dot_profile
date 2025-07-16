@@ -33,3 +33,13 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
 fi
+
+if
+  [ -z "$SSH_CLIENT" ] &&
+  [ -z "$SSH_TTY" ] &&
+  command -v uwsm &> /dev/null &&
+  uwsm check may-start &&
+  uwsm select;
+then
+  exec uwsm start default
+fi

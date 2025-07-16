@@ -1,0 +1,35 @@
+{
+    "custom/apps": {
+        "format": "Apps",
+        "on-click": "rofi -show drun -replace"
+    },
+    "hyprland/workspaces" : {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+        },
+        "persistent-workspaces": {
+             "*": 5
+        }
+    },
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/files",
+            "custom/terminal"
+        ]
+    },
+    "custom/files": {
+        "format": "Files",
+        "on-click": "thunar"
+    },
+    "custom/terminal": {
+        "format": "Terminal",
+        "on-click": "wezterm start"
+    } 
+}
