@@ -1,5 +1,3 @@
-alias pg="pgrep -a"
-alias pgf="pgrep -fa"
-alias pk="pkill"
-alias pkf="pkill -f"
-alias pfz="ps aux | fzf | awk '{print $2}' | xargs kill"
+alias pgr="pgrep -fa"
+alias pkl="pkill -f"
+alias fk="ps aux | fzf --reverse | awk '{print \$2}' | xargs kill"
