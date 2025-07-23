@@ -1,10 +1,18 @@
 # dotfiles
 
-These dotfiles are managed using [chezmoi](https://www.chezmoi.io/ ).
+## Linux
 
-Use `chezmoi init [git_remote_url]` and `chezmoi update` to pull from remote.
+```sh
+wget https://raw.githubusercontent.com/mass8326/dotfiles/refs/heads/main/scripts/install.sh
+cat install.sh
 
-Use `chezmoi git ...` to push to remote.
+chmod +x install.sh
+./install.sh
+
+chezmoi init --apply mass8326
+chsh -s /bin/zsh
+sudo shutdown -r now
+```
 
 ## Windows Registry
 

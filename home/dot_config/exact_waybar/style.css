@@ -1,0 +1,15 @@
+@import url("styles/window.css");
+@import url("styles/workspaces.css");
+@import url("styles/tooltips.css");
+
+box#hardware, #load, #network, #bluetooth {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 14px;
+  font-size: 14px;
+  padding: 0 28px;
+  margin: 4px;
+}
+
+box#hardware > widget:not(:last-child) > label {
+  margin-right: 28px;
+}

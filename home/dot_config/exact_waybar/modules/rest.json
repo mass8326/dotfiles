@@ -1,0 +1,51 @@
+{
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%Y.%m.%d @ %H:%M}",
+    "format-alt": "{:%a, %b %e, %Y at %I:%M %p}"
+  },
+  "load": {
+    "interval": 1,
+    "format": "{load1:0<4}  {load5:0<4}  {load15:0<4}"
+  },
+  "network": {
+    "interval": 1,
+    "format": "{bandwidthTotalBytes}",
+    "on-click": "firewall-config"
+  },
+  "bluetooth": {
+	  "format": "",
+	  "format-disabled": "󰂲",
+    "format-no-controller": "",
+	  "format-connected": "󰂱 [{num_connections}]",
+	  "tooltip-format": "{controller_address}",
+	  "tooltip-format-connected": "{controller_address}\n\n{device_enumerate}",
+    "on-click": "uwsm app -- blueman-manager"
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+	  "modules": [
+	    "cpu",
+	    "memory",
+	    "disk",
+	    "pulseaudio"
+	  ]
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU {usage:2}%"
+  },
+  "memory": {
+    "interval": 1,
+    "format": "RAM {percentage:2}%"
+  },
+  "disk": {
+    "format": "HDD {percentage_used:2}%",
+    "tooltip-format": "{used} / {total}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "VOL {volume:3}%",
+    "on-click": "uwsm app -- pavucontrol"
+  }
+}
