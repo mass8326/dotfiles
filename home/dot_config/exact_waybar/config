@@ -1,0 +1,20 @@
+{
+  "layer": "top",
+  "include": [
+    "~/.config/waybar/modules/left.json",
+    "~/.config/waybar/modules/rest.json"
+  ],
+  "modules-left": [
+    "group/launchers",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "bluetooth", 
+    "load",
+    "group/hardware",
+  ]
+}

@@ -1,0 +1,6 @@
+window#waybar {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  font-family: "CommitMono Nerd Font", "Font Awesome 6 Free", FontAwesome, monospace;
+  font-size: 16px;
+}

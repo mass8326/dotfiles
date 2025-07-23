@@ -1,6 +1,7 @@
 local utils = require("utils")
 
 local config = {
+  enable_wayland = false,
   initial_cols = 128,
   initial_rows = 36,
   skip_close_confirmation_for_processes_named = {

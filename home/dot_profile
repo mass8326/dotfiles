@@ -25,6 +25,12 @@ if [ -d "/opt/nvim" ]; then
 fi
 if command -v nvim &> /dev/null; then
 	export EDITOR="nvim"
+	export GIT_EDITOR="nvim"
+fi
+
+# Code
+if [ -d "/opt/code" ]; then
+	export PATH="$PATH:/opt/code/bin"
 fi
 
 # PNPM
