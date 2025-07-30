@@ -1,4 +1,4 @@
-packages=(
+official_packages=(
   # Terminal
   zsh
   nvim
@@ -12,6 +12,8 @@ packages=(
   wl-clipboard
   xdg-desktop-portal-hyprland
   hyprpolkitagent
+  gnome-keyring
+  libsecret
   # File Browser
   nautilus
   gvfs-smb
@@ -32,7 +34,12 @@ packages=(
   lib32-nvidia-utils
 )
 
-sudo pacman -S ${packages[@]}
+aur_packages=(
+  visual-studio-code-bin
+)
+
+sudo pacman -S ${official_packages[@]}
+yay -S ${aur_packages[@]}
 
 cd $(mktemp -d)
 git clone --depth=1 https://github.com/adi1090x/rofi.git
