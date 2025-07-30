@@ -4,8 +4,8 @@
   },
   "custom/arch": {
     "format": "󰣇",
-    "tooltip-format": "Launch",
-    "on-click": "uwsm app -- rofi -show drun -replace"
+    "tooltip-format": "Lock",
+    "on-click": "uwsm app -- hyprlock"
   },
   "hyprland/workspaces" : {
     "on-click": "activate",
