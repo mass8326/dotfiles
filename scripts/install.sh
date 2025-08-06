@@ -8,6 +8,7 @@ official_packages=(
   waybar
   rofi-wayland
   wezterm
+  ttf-liberation
   # Integrations
   wl-clipboard
   xdg-desktop-portal-hyprland
@@ -17,6 +18,11 @@ official_packages=(
   # File Browser
   nautilus
   gvfs-smb
+  gvfs-mtp
+  # Media
+  loupe
+  vlc
+  vlc-plugins-all
   # Settings
   blueman
   nwg-displays
