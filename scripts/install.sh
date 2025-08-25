@@ -5,6 +5,9 @@ official_packages=(
   chezmoi
   # Desktop
   hyprland
+  hyprlock
+  hyprpaper
+  hypridle
   waybar
   rofi-wayland
   wezterm
@@ -17,6 +20,8 @@ official_packages=(
   libsecret
   # File Browser
   nautilus
+  impression
+  file-roller
   gvfs-smb
   gvfs-mtp
   # Media
@@ -46,6 +51,9 @@ aur_packages=(
 
 sudo pacman -S ${official_packages[@]}
 yay -S ${aur_packages[@]}
+
+systemctl --user enable --now hypridle
+systemctl --user enable --now gnome-keyring-daemon
 
 cd $(mktemp -d)
 git clone --depth=1 https://github.com/adi1090x/rofi.git
