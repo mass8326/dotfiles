@@ -12,6 +12,7 @@ official_packages=(
   rofi-wayland
   wezterm
   ttf-liberation
+  noto-fonts-emoji
   # Integrations
   wl-clipboard
   xdg-desktop-portal-hyprland
@@ -20,11 +21,13 @@ official_packages=(
   libsecret
   # File Browser
   nautilus
-  impression
-  file-roller
-  gvfs-smb
   gvfs-mtp
+  gvfs-smb
   # Media
+  file-roller
+  gnome-disk-utility
+  gnome-text-editor
+  impression
   loupe
   vlc
   vlc-plugins-all
@@ -32,6 +35,7 @@ official_packages=(
   blueman
   nwg-displays
   nwg-look
+  wireguard-tools
   # Screenshots
   slurp
   grim
@@ -46,11 +50,11 @@ official_packages=(
 )
 
 aur_packages=(
+  brave-bin
   visual-studio-code-bin
 )
 
-sudo pacman -S ${official_packages[@]}
-yay -S ${aur_packages[@]}
+yay -S --needed ${official_packages[@]} ${aur_packages[@]}
 
 systemctl --user enable --now hypridle
 systemctl --user enable --now gnome-keyring-daemon
