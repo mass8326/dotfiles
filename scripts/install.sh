@@ -59,6 +59,9 @@ yay -S --needed ${official_packages[@]} ${aur_packages[@]}
 systemctl --user enable --now hypridle
 systemctl --user enable --now gnome-keyring-daemon
 
+ # Needed for VPNs to update DNS servers
+sudo systemctl enable --now systemd-resolved
+
 cd $(mktemp -d)
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
