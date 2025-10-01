@@ -4,7 +4,7 @@ alias rt='cd $(git rev-parse --show-toplevel)'
 # $_rt_package
 # $_rt_script
 
-function rtc() {
+function rtf() {
   _rtfn_get_package ./*/ || return 1
   local dir=$(dirname $_rt_package)
   local cmd="cd $dir"
@@ -12,7 +12,7 @@ function rtc() {
   eval $cmd
 }
 
-function rtct() {
+function rtft() {
   if [[ $TERM_PROGRAM = "WezTerm" ]]; then
     _rtfn_get_package ./*/ || return 1
     local dir=$(dirname $_rt_package)
@@ -63,12 +63,12 @@ function _rtfn_get_package() {
     return 1
   fi
 
-  local packages=$(fd package.json $@ | sort | awk '{print gsub("/", "/") " " $0}' | sort -nr | cut -d' ' -f2-)
-  if [[ -z $packages ]]; then
-    echo "Error: There's no child 'package.json'"
+  local result=$(fd '(package.json|go.mod)' $@ | awk '{print gsub("/", "/") " " $0}' | sort -nr | cut -d' ' -f2-)
+  if [[ -z $result ]]; then
+    echo "Error: No child packages or modules found"
     return 1
   else
-    _rt_package=$(echo $packages | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
+    _rt_package=$(echo $result | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
   if [[ -z $_rt_package ]]; then
