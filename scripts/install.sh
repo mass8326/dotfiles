@@ -10,6 +10,8 @@ official_packages=(
   hypridle
   waybar
   rofi-wayland
+  nwg-displays
+  nwg-look
   wezterm
   ttf-liberation
   noto-fonts-emoji
@@ -33,8 +35,6 @@ official_packages=(
   vlc-plugins-all
   # Settings
   blueman
-  nwg-displays
-  nwg-look
   wireguard-tools
   # Screenshots
   slurp

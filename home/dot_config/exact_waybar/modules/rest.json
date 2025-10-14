@@ -8,6 +8,10 @@
     "interval": 1,
     "format": "{load1:0<4}  {load5:0<4}  {load15:0<4}"
   },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
   "network": {
     "interval": 1,
     "format": "{bandwidthTotalBytes}",

@@ -1,0 +1,37 @@
+window {
+  background: rgba(0,0,0,0.75);
+	border-radius: 10px;
+	/* border-style: none; */
+	/* border-width: 1px; */
+	/* border-color: rgba(156, 142, 122, 0.7) */
+}
+
+#box {
+  /* Define attributes of the box surrounding icons here */
+  padding: 10px
+}
+
+
+button, image {
+	background: none;
+	border-style: none;
+	box-shadow: none;
+	color: #eee;
+}
+
+button {
+	padding: 4px;
+	margin: 0 4px 4px;
+  font-size: 12px;
+	border-radius: 6px;
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.35);
+}
+
+#active button {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+
