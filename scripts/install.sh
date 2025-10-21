@@ -8,7 +8,9 @@ official_packages=(
   hyprlock
   hyprpaper
   hypridle
+  hyprpicker
   waybar
+  swaync
   rofi-wayland
   nwg-displays
   nwg-look
@@ -52,6 +54,7 @@ official_packages=(
 aur_packages=(
   brave-bin
   visual-studio-code-bin
+  hyprshot
 )
 
 yay -S --needed ${official_packages[@]} ${aur_packages[@]}
