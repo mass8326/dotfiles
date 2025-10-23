@@ -8,10 +8,6 @@
     "interval": 1,
     "format": "{load1:0<4}  {load5:0<4}  {load15:0<4}"
   },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10,
-  },
   "network": {
     "interval": 1,
     "format": "{bandwidthTotalBytes}",
@@ -26,30 +22,4 @@
 	  "tooltip-format-connected": "{controller_address}\n\n{device_enumerate}",
     "on-click": "uwsm app -- blueman-manager"
   },
-  "group/hardware": {
-    "orientation": "horizontal",
-	  "modules": [
-	    "cpu",
-	    "memory",
-	    "disk",
-	    "pulseaudio"
-	  ]
-  },
-  "cpu": {
-    "interval": 1,
-    "format": "CPU {usage:2}%"
-  },
-  "memory": {
-    "interval": 1,
-    "format": "RAM {percentage:2}%"
-  },
-  "disk": {
-    "format": "HDD {percentage_used:2}%",
-    "tooltip-format": "{used} / {total}"
-  },
-  "pulseaudio": {
-    "scroll-step": 5,
-    "format": "VOL {volume:3}%",
-    "on-click": "uwsm app -- pavucontrol"
-  }
 }

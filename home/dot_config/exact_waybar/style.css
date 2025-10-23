@@ -1,10 +1,15 @@
-@import url("styles/window.css");
-@import url("styles/workspaces.css");
-@import url("styles/tooltips.css");
+/* https://docs.gtk.org/gtk3/css-overview.html */
 
-box#hardware, #load, #network, #bluetooth {
+@import url("modules/drawer.css");
+@import url("modules/icons.css");
+@import url("modules/workspaces.css");
+@import url("styles/tooltips.css");
+@import url("styles/window.css");
+
+/* Target height of containers is 24px with a fully rounded corner (12px radius) */
+box#hardware, #load, #bluetooth {
   background-color: rgba(0,0,0,0.5);
-  border-radius: 14px;
+  border-radius: 12px;
   font-size: 14px;
   padding: 0 28px;
   margin: 4px;

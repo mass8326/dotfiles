@@ -1,0 +1,11 @@
+{
+  "custom/icon-arch": {
+    "format": "󰣇",
+    "tooltip-format": "Lock",
+    "on-click": "uwsm app -- hyprlock",
+  },
+  "custom/icon-drawer": {
+    "format": "",
+    "tooltip": false,
+  },
+}

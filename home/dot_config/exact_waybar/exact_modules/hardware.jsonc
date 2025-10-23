@@ -1,0 +1,28 @@
+{
+  "group/hardware": {
+    "orientation": "horizontal",
+	  "modules": [
+	    "cpu",
+	    "memory",
+	    "disk",
+	    "pulseaudio"
+	  ]
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU {usage:2}%"
+  },
+  "memory": {
+    "interval": 1,
+    "format": "RAM {percentage:2}%"
+  },
+  "disk": {
+    "format": "HDD {percentage_used:2}%",
+    "tooltip-format": "{used} / {total}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "VOL {volume:3}%",
+    "on-click": "uwsm app -- pavucontrol"
+  }
+}

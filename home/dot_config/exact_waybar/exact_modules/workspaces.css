@@ -1,0 +1,27 @@
+box#launchers {
+  font-size: 22px;
+}
+
+#workspaces {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 0 14px;
+  margin: 4px;
+}
+
+#workspaces button {
+  all: unset;
+  font-size: 12px;
+  padding: 6px;
+  opacity: 0.4;
+}
+
+#workspaces button.active {
+  font-size: 16px;
+  padding: 4px 3px;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  opacity: 0.7;
+}

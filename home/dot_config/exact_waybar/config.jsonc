@@ -1,0 +1,27 @@
+// https://fmt.dev/12.0/syntax/
+
+{
+  "layer": "top",
+  "reload_style_on_change": true,
+  "include": [
+    "~/.config/waybar/local/output.jsonc",
+    "~/.config/waybar/modules/drawer.jsonc",
+    "~/.config/waybar/modules/hardware.jsonc",
+    "~/.config/waybar/modules/icons.jsonc",
+    "~/.config/waybar/modules/rest.jsonc",
+    "~/.config/waybar/modules/workspaces.jsonc",
+  ],
+  "modules-left": [
+    "group/launchers",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "group/drawer",
+    "bluetooth", 
+    "load",
+    "group/hardware",
+  ],
+}

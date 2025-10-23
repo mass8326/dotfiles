@@ -1,0 +1,10 @@
+box#drawer {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  font-size: 14px;
+  margin: 4px;
+}
+
+#tray {
+  padding-right: 8px;
+}
