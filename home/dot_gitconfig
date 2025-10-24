@@ -1,6 +1,8 @@
 [user]
-	email = me@reyma.dev
-	name = Magnus Reyes
+  email = me@reyma.dev
+  name = Magnus Reyes
 [credential]
-	helper = cache --timeout 21600
-	helper = oauth
+  credentialStore = secretservice
+  helper = cache --timeout 21600
+  helper = manager
+  helper = oauth
