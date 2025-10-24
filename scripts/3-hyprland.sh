@@ -26,8 +26,18 @@ packages=(
   hyprpaper
   bibata-cursor-theme-bin
   # Fonts
-  ttf-liberation
+  adobe-source-code-pro-fonts
+  adobe-source-sans-fonts
+  adobe-source-serif-fonts
+  noto-fonts
   noto-fonts-emoji
+  otf-commit-mono-nerd
+  ttf-caladea
+  ttf-carlito
+  ttf-dejavu
+  ttf-liberation
+  ttf-roboto
+  ttf-ubuntu-font-family
   # Applications
   brave-bin
   visual-studio-code-bin
