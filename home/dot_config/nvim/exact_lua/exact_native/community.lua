@@ -15,6 +15,28 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.test.neotest" },
+  { import = "astrocommunity.split-and-window.neominimap-nvim" },
+  {
+    "Isrothy/neominimap.nvim",
+    optional = true,
+    specs = {
+      {
+        "AstroNvim/astrocore",
+        opts = {
+          mappings = {
+            n = {
+              ["<Leader>m"] = { "<Cmd>Neominimap Toggle<CR>", desc = "Toggle minimap" },
+            },
+          },
+        },
+      },
+    },
+    ---@module "neominimap.config.meta"
+    ---@type Neominimap.UserConfig
+    opts = {
+      auto_enable = false,
+    },
+  },
   {
     ---@module "astrolsp"
     "AstroNvim/astrolsp",
