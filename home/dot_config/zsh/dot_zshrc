@@ -23,9 +23,10 @@ plugins=(
   chezmoi
   fzf
   # Languages
-  zsh-nvm
+  fnm-pnpm
   golang
   rust
+  pulumi
 )
 
 source $ZSH/oh-my-zsh.sh
