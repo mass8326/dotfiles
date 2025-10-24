@@ -1,6 +1,6 @@
 ["wallpapers/wallpaper.jpg"]
 type = "file"
-url = "https://bucket.magnusreyes.com/public/wallpaper.jpg"
+url = "https://bkt.reyma.dev/chezmoi/wallpaper.jpg"
 
 ["fonts/commit-mono"]
 type = "archive"
