@@ -1,7 +1,8 @@
 set -e
 
 packages=(
-  rofi
+  rofi # Launch programs
+  swaync # Display launch errors
 )
 
 paru -S --needed ${packages[@]}

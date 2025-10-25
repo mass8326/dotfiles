@@ -8,11 +8,12 @@ packages=(
   # Authentication
   hyprpolkitagent
   # Desktop
+  foot
   hypridle
   hyprlock
   hyprpicker
   hyprshot
-  swaync
+  tmux
   waybar
   wezterm
   wl-clipboard
