@@ -4,6 +4,7 @@ export ZSH="$ZDOTDIR/ohmyzsh"
 export ZSH_CUSTOM="$ZDOTDIR/ohmyzsh-custom"
 
 ZSH_THEME="mass"
+DISABLE_FZF_KEY_BINDINGS="true"
 
 # Must define git aliases before initializing omz so that chezmoi plugin will detect them
 alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --multi | xargs -0 -t git add"
