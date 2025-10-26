@@ -29,11 +29,11 @@ gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal ""
 
-if grep -q "pam_gnome_keyring.so" /etc/pam.d/greetd; then
-  echo 'Skipping gnome-keyring installation into "/etc/pam.d/greetd"...'
+if grep -q "pam_gnome_keyring.so" /etc/pam.d/hyprlock; then
+  echo 'Skipping gnome-keyring installation into "/etc/pam.d/hyprlock"...'
 else
-  echo 'Installing gnome-keyring into "/etc/pam.d/greetd"...'
-  sudo tee -a /etc/pam.d/greetd &> /dev/null << EOF
+  echo 'Installing gnome-keyring into "/etc/pam.d/hyprlock"...'
+  sudo tee -a /etc/pam.d/hyprlock &> /dev/null << EOF
 auth       optional     pam_gnome_keyring.so
 session    optional     pam_gnome_keyring.so auto_start
 EOF
