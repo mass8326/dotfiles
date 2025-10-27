@@ -1,6 +1,6 @@
 if (( $+commands[fnm] )); then
   # Set up env vars
-  source <(fnm env)
+  . <(fnm env)
   export FNM_COREPACK_ENABLED=true
   # Set up lazy loading of completions
   if [[ ! -f "$ZSH_CACHE_DIR/completions/_fnm" ]]; then
@@ -13,5 +13,5 @@ fi
 
 if (( $+commands[pnpm] )); then
   # /var/empty will prevent corepack from prompting for user input
-  source <(cd /var/empty; pnpm completion zsh)
+  . <(cd /var/empty; pnpm completion zsh)
 fi

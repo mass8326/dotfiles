@@ -8,7 +8,11 @@
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 # Rust
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then 
+  . "$HOME/.cargo/env"
+elif [ -d "$HOME/.cargo/bin" ]; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
 
 # Go
 [ -d "/opt/go/bin" ] && export PATH="$PATH:/opt/go/bin"
@@ -41,3 +45,6 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
     *) export PATH="$PNPM_HOME:$PATH" ;;
   esac
 fi
+
+# Local Profile
+[ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"
