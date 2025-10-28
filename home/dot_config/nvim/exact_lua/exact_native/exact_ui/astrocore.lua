@@ -1,6 +1,5 @@
 ---@type LazySpec
 return {
-  ---@module "AstroNvim/astrocore"
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {

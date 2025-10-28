@@ -1,3 +1,6 @@
+---@module "astrolsp"
+---@module "neominimap.config.meta"
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
@@ -31,14 +34,12 @@ return {
         },
       },
     },
-    ---@module "neominimap.config.meta"
     ---@type Neominimap.UserConfig
     opts = {
       auto_enable = false,
     },
   },
   {
-    ---@module "astrolsp"
     "AstroNvim/astrolsp",
     ---@type AstroLSPOpts
     opts = {

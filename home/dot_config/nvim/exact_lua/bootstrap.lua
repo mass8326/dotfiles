@@ -1,6 +1,7 @@
+---@module "astronvim"
+
 ---@type LazySpec
 local astro = {
-  ---@module "AstroNvim/AstroNvim"
   "AstroNvim/AstroNvim",
   version = "^4",
   import = "astronvim.plugins",

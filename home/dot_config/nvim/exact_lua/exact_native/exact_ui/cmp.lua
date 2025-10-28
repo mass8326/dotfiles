@@ -1,3 +1,5 @@
+---@module "cmp"
+
 local MAX_WIDTHS = {
   abbr = 24,
   menu = 36,
@@ -5,7 +7,6 @@ local MAX_WIDTHS = {
 
 ---@type LazySpec
 return {
-  ---@module "cmp"
   "hrsh7th/nvim-cmp",
   opts = {
     formatting = {
