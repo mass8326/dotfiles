@@ -1,3 +1,8 @@
+["tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm"
+refreshPeriod = "168h"
+
 ["catppuccin"]
 type = "git-repo"
 url = "https://github.com/catppuccin/tmux.git"
