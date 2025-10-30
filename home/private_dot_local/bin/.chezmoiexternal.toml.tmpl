@@ -19,8 +19,14 @@ path = "libSkiaSharp.so"
 
 ["docker-credential-secretservice"]
 type = "file"
-url = "https://github.com/docker/docker-credential-helpers/releases/download/v0.9.3/docker-credential-pass-v0.9.3.linux-amd64"
-checksum.sha512 = "4baeb8d4eb86c37a78a1e1fbcfc02fb6e674a37d5a19ef1730a6910d360e5e9486402a8f684687397b71f89577895686cc91a588366e590d8fb719ae8b9cefb8"
+url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-secretservice-v0.9.4.linux-amd64" | quote }}
+checksum.sha256 = "747dbdca622f880003559369edf7bcbdc764d9f5f13af6f4ad616e4267812947"
+executable = true
+
+["docker-credential-pass"]
+type = "file"
+url = {{ gitHubLatestReleaseAssetURL "docker/docker-credential-helpers" "docker-credential-pass-v0.9.4.linux-amd64" | quote }}
+checksum.sha256 = "cd1cf468c9773baab8e87047456a9b2ebbd1881952fde40fe1122fce8ae38d09"
 executable = true
 
 ["fd"]
