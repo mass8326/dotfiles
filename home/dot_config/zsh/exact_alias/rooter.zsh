@@ -63,12 +63,12 @@ function _rtfn_get_package() {
     return 1
   fi
 
-  local result=$(fd '(package.json|go.mod)' $@ | awk '{print gsub("/", "/") " " $0}' | sort -nr | cut -d' ' -f2-)
+  local result=$(fd '(package.json|go.mod|Cargo.toml)' $@ | awk '{print gsub("/", "/") " " $0}' | sort -nr | cut -d' ' -f2-)
   if [[ -z $result ]]; then
     echo "Error: No child packages or modules found"
     return 1
   else
-    _rt_package=$(echo $result | fzf --prompt="package.json location 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
+    _rt_package=$(echo $result | fzf --prompt="Search 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
   if [[ -z $_rt_package ]]; then
