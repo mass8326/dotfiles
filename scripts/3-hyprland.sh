@@ -1,11 +1,8 @@
 set -e
 
 packages=(
-  # Terminal
-  zsh
-  nvim
-  chezmoi
   # Authentication
+  bitwarden
   hyprpolkitagent
   # Desktop
   foot
@@ -13,7 +10,6 @@ packages=(
   hyprlock
   hyprpicker
   hyprshot
-  tmux
   waybar
   wezterm
   wl-clipboard
