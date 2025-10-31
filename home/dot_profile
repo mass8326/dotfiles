@@ -46,5 +46,9 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
   esac
 fi
 
+if [ -f "$HOME/.bitwarden-ssh-agent.sock" ]; then
+  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+fi
+
 # Local Profile
 [ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"

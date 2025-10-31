@@ -19,7 +19,6 @@ plugins=(
   vi-mode
   virtualenv
   # Utilities
-  ssh-agent
   git
   chezmoi
   fzf
