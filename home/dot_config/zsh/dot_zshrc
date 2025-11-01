@@ -1,4 +1,4 @@
-# omz setup
+# vim:ft=sh
 
 export ZSH="$ZDOTDIR/ohmyzsh"
 export ZSH_CUSTOM="$ZDOTDIR/ohmyzsh-custom"
@@ -8,8 +8,6 @@ DISABLE_FZF_KEY_BINDINGS="true"
 
 # Must define git aliases before initializing omz so that chezmoi plugin will detect them
 alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --multi | xargs -0 -t git add"
-
-zstyle :omz:plugins:ssh-agent lazy yes
 
 plugins=(
   # Quality of life
@@ -28,6 +26,13 @@ plugins=(
   rust
   pulumi
 )
+
+if (( $+commands[bitwarden-desktop] )); then
+  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+else
+  zstyle :omz:plugins:ssh-agent lazy yes
+  plugins+=('ssh-agent')
+fi
 
 . $ZSH/oh-my-zsh.sh
 
