@@ -12,6 +12,5 @@ if (( $+commands[fnm] )); then
 fi
 
 if (( $+commands[pnpm] )); then
-  # /var/empty will prevent corepack from prompting for user input
-  . <(cd /var/empty; pnpm completion zsh)
+  . <(export COREPACK_ENABLE_DOWNLOAD_PROMPT=0; pnpm completion zsh)
 fi
