@@ -27,7 +27,7 @@ systemctl --user enable --now gnome-keyring-daemon
 
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal ""
+gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal foot
 
 if grep -q "pam_gnome_keyring.so" /etc/pam.d/hyprlock; then
   echo 'Skipping gnome-keyring installation into "/etc/pam.d/hyprlock"...'
