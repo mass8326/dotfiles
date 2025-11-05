@@ -1,10 +1,7 @@
 set -e
 
 packages=(
-  # Authentication
-  gnome-keyring
   # Appearance
-  gnome-themes-extra
   nwg-look
   xdg-desktop-portal-gtk
   # Applications
@@ -25,8 +22,6 @@ paru -S --needed ${packages[@]}
 
 systemctl --user enable --now gnome-keyring-daemon
 
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal foot
 
 if grep -q "pam_gnome_keyring.so" /etc/pam.d/hyprlock; then

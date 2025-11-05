@@ -2,10 +2,12 @@ set -e
 
 packages=(
   # Authentication
-  bitwarden
   hyprpolkitagent
   # Desktop
-  foot
+  rofi
+  swaync
+  uwsm
+  hyprland
   hypridle
   hyprlock
   hyprpicker
@@ -35,13 +37,15 @@ packages=(
   ttf-liberation
   ttf-roboto
   ttf-ubuntu-font-family
-  # Applications
-  brave-bin
-  visual-studio-code-bin
-  vlc
-  vlc-plugins-all
 )
 
 paru -S --needed ${packages[@]}
 
 systemctl --user enable --now hypridle
+
+(
+  cd $(mktemp -d)
+  git clone --depth=1 https://github.com/adi1090x/rofi.git
+  cd rofi
+  ./setup.sh
+)

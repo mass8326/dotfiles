@@ -1,10 +1,8 @@
 set -e
 
 packages=(
-  chezmoi
-  nvim
-  tmux
-  zsh
+  dolphin
+  xdg-desktop-portal-gtk
 )
 
 paru -S --needed ${packages[@]}
