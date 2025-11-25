@@ -4,7 +4,10 @@ vim.treesitter.query.add_directive("inject-go-tmpl!", function(_, _, bufnr, _, m
   metadata["injection.language"] = ext
 end, {})
 
-vim.filetype.add({ extension = { tmpl = "gotmpl" } })
+vim.filetype.add({
+  extension = { tmpl = "gotmpl" },
+  filename = { [".chezmoiignore"] = "gotmpl" },
+})
 
 ---@type LazySpec
 return {
