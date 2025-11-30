@@ -13,13 +13,14 @@
   ],
   "modules-left": [
     "group/launchers",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "group/drawer",
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "group/drawer",
+    "battery",
     "bluetooth", 
     "load",
     "group/hardware",
