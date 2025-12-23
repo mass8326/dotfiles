@@ -11,6 +11,7 @@ alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --
 
 plugins=(
   # Quality of life
+  direnv
   zsh-syntax-highlighting
   zsh-autosuggestions
   you-should-use
