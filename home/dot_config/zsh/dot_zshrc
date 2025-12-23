@@ -27,6 +27,7 @@ plugins=(
   pulumi
 )
 
+# Conditionally add ssh-agent
 if (( $+commands[bitwarden-desktop] )); then
   export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 else
@@ -39,4 +40,9 @@ fi
 for file in $ZDOTDIR/alias/*; do
   . $file
 done
+
+# Change fzf keybind
+bindkey -r '^T'
+bindkey '^F' fzf-file-widget
+
 [ -f "$ZDOTDIR/.zshrc.local" ] && . "$ZDOTDIR/.zshrc.local"
