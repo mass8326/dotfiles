@@ -1,3 +1,4 @@
+# vim:ft=sh
 # Use for debugging startup scripts
 # setopt SOURCE_TRACE
 

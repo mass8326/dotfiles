@@ -13,6 +13,7 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.svelte" },

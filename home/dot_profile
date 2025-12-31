@@ -1,3 +1,4 @@
+# vim:ft=sh
 # Contents of this file apply on login only
 
 # Bash login compatibility
@@ -47,4 +48,7 @@ if [ -d "$HOME/.local/share/pnpm" ]; then
 fi
 
 # Local Profile
-[ -f "$HOME/.profile.local" ] && . "$HOME/.profile.local"
+[ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ] && \
+  . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+[ -f "$HOME/.profile.local" ] && \
+  . "$HOME/.profile.local"
