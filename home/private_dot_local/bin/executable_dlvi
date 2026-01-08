@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+dir=$(mktemp -d)
+cd $dir
+wget -O $1 $2
+echo "$3 $1" | sha256sum -c
+chmod +x $1
+mv $1 /usr/local/bin/
