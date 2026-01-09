@@ -8,6 +8,9 @@
     # https://search.nixos.org/packages
     packages = with pkgs; [
       deadnix
+      docker-credential-helpers
+      git-credential-manager
+      git-credential-oauth
       nixd
       nixfmt
       statix
@@ -17,12 +20,15 @@
     direnv = {
       enable = true;
       enableZshIntegration = true;
-      nix-direnv = {
-        enable = true;
-      };
+      nix-direnv.enable = true;
     };
-    home-manager = {
+    fd.enable = true;
+    fzf.enable = true;
+    git-credential-oauth.enable = true;
+    home-manager.enable = true;
+    lazygit = {
       enable = true;
+      enableZshIntegration = true;
     };
     nh = {
       enable = true;
