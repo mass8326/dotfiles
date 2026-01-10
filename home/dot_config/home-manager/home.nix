@@ -10,22 +10,24 @@
       deadnix
       docker-credential-helpers
       git-credential-manager
-      git-credential-oauth
       nixd
       nixfmt
       statix
     ];
   };
   programs = {
+    btop.enable = true;
     direnv = {
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+    fastfetch.enable = true;
     fd.enable = true;
     fzf.enable = true;
     git-credential-oauth.enable = true;
     home-manager.enable = true;
+    jq.enable = true;
     lazygit = {
       enable = true;
       enableZshIntegration = true;
