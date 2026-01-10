@@ -22,7 +22,6 @@ plugins=(
   chezmoi
   fzf
   # Languages
-  fnm-pnpm
   golang
   rust
   pulumi
