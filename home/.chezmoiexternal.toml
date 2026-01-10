@@ -1,4 +1,0 @@
-[".ssh"]
-type = "git-repo"
-url = "https://github.com/mass8326/dotfiles-ssh"
-refreshPeriod = "168h"
