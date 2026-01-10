@@ -3,38 +3,47 @@
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
 # https://medium.com/@seport/writing-zsh-themes-a-quickref-4c98fdc5ddea
 
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd mass-precmd
+
+# Print information above actual prompt
+# Keep in mind that *_prompt_info functions will not work here
+function mass-precmd() {
+  local user="%B%F{green}%n@%m%f%b"
+  local dirname="%B%F{blue}%1~%f%b"
+  local left="${user} ${dirname}"
+
+  local fulldir="%B%F{magenta}%/%f%b"
+  local level="%(2L.%F{yellow}[%L] %f.)"
+  local clock="%B%F{cyan}[%D{%H:%M:%S}]%f%b"
+  local right="${fulldir} ${level}${clock}"
+
+  print -rP "$(fill-line ${left} ${right})"
+}
+
+# Left side prompt
+PS1='$(vi_mode_prompt_info)%(!.#.$)%f '
+# Right side prompt
+RPS1='%(?.%F{green}.%F{red})%? -$(virtualenv_prompt_info)$(git_prompt_info)'
+# Multi-line prompt
+PS2='%F{yellow}>%f '
+
+# vi_mode_prompt_info
+MODE_INDICATOR="%F{red}"
+INSERT_MODE_INDICATOR="%F{yellow}"
 VI_MODE_SET_CURSOR=true
+
+# git_prompt_info
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}*%F{yellow}"
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%f "
+
+# virtualenv_prompt_info
 ZSH_THEME_VIRTUALENV_PREFIX="%F{magenta}["
 ZSH_THEME_VIRTUALENV_SUFFIX="]%f "
 ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="%F{purple}"
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="!%f"
-
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd set-prompt
-
-function set-prompt() {
-  # local branch="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
-  # branch=${${branch//\%/%%}/\\/\\\\\\}
-
-  local privilege="%F{yellow}%(!.#.$)%f"
-  local user="%B%F{green}%n@%m%f%b"
-  local level="%(2L. %B%F{magenta}[%L]%f%b.)"
-  local dirname="%B%F{blue}%1~%f%b"
-  local fulldir="%B%F{magenta}%/%f%b"
-  local code="%(?.%F{green}.%F{red})%? -%f"
-
-  local topl="${user} ${dirname}${level} $(git_prompt_info)"
-  local topr="${fulldir}"
-  local top="$(fill-line ${topl} ${topr})"
- 
-  PS1="${top}"$'\n'"${privilege} "
-  PS2='%F{yellow}>%f '
-  RPS1="$code %B%F{cyan}%D{%H:%M:%S}%f%b"
-}
 
 # Pads between two strings with spaces up to available columns
 # Third argument can be used to adjust padding for weird characters
