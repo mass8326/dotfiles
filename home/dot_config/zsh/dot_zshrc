@@ -27,12 +27,14 @@ plugins=(
   pulumi
 )
 
-# Conditionally add ssh-agent
-if (( $+commands[bitwarden-desktop] )); then
-  export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
-else
-  zstyle :omz:plugins:ssh-agent lazy yes
-  plugins+=('ssh-agent')
+# Conditionally add ssh-agent if not already set up
+if [[ -z $SSH_AUTH_SOCK ]]; then
+  if (( $+commands[bitwarden-desktop] )); then
+    export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+  else
+    zstyle :omz:plugins:ssh-agent lazy yes
+    plugins+=('ssh-agent')
+  fi
 fi
 
 . $ZSH/oh-my-zsh.sh
