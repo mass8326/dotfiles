@@ -12,6 +12,7 @@
       git-credential-manager
       nixd
       nixfmt
+      rsync
       statix
     ];
   };
