@@ -1,0 +1,7 @@
+edit.command = "nvim"
+cd.command = "zsh"
+
+[data.wants]
+desktop = {{ promptBoolOnce .wants "desktop" "Do you want a desktop gui" | toToml }}
+dev = {{ promptBoolOnce .wants "dev" "Do you want a desktop gui" | toToml }}
+

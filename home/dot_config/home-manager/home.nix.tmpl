@@ -7,36 +7,44 @@
     stateVersion = "25.11";
     # https://search.nixos.org/packages
     packages = with pkgs; [
+      ncdu
+      rsync
+      {{- if .wants.dev }}
+      # Dev Packages
       deadnix
-      docker-credential-helpers
-      git-credential-manager
       nixd
       nixfmt
-      rsync
       statix
+      {{- if .wants.desktop }}
+      # Dev Desktop Packages
+      docker-credential-helpers
+      git-credential-manager
+      {{- end }}
+      {{- end }}
     ];
   };
   programs = {
     btop.enable = true;
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
     fastfetch.enable = true;
     fd.enable = true;
     fzf.enable = true;
-    git-credential-oauth.enable = true;
     home-manager.enable = true;
-    jq.enable = true;
-    lazygit = {
-      enable = true;
-      enableZshIntegration = true;
-    };
     nh = {
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
     };
+    {{- if .wants.dev }}
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+    jq.enable = true;
+    lazygit = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    {{- end }}
   };
 }
