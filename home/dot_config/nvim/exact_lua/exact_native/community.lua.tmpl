@@ -9,18 +9,26 @@ return {
   { import = "astrocommunity.lsp.nvim-lint" },
   { import = "astrocommunity.lsp.nvim-lsp-file-operations" },
   { import = "astrocommunity.motion.harpoon" },
-  { import = "astrocommunity.pack.astro" },
-  { import = "astrocommunity.pack.cpp" },
-  { import = "astrocommunity.pack.go" },
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.nix" },
-  { import = "astrocommunity.pack.prettier" },
+  {{- if lookPath "cargo" }}
   { import = "astrocommunity.pack.rust" },
+  {{- end }}
+  {{- if lookPath "go" }}
+  { import = "astrocommunity.pack.go" },
+  {{- end }}
+  {{- if lookPath "nix" }}
+  { import = "astrocommunity.pack.nix" },
+  {{- end }}
+  {{- if lookPath "node" }}
+  { import = "astrocommunity.pack.astro" },
+  { import = "astrocommunity.pack.prettier" },
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.test.neotest" },
+  {{- end }}
+  { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.search.nvim-spectre" },
   { import = "astrocommunity.split-and-window.neominimap-nvim" },
-  { import = "astrocommunity.test.neotest" },
   {
     "Isrothy/neominimap.nvim",
     optional = true,
