@@ -3,15 +3,9 @@
 ## Linux
 
 ```sh
-wget https://raw.githubusercontent.com/mass8326/dotfiles/refs/heads/main/scripts/install.sh
-cat install.sh
-
-chmod +x install.sh
-./install.sh
-
-chezmoi init --apply mass8326
-chsh -s /bin/zsh
-sudo shutdown -r now
+mkdir ~/.local
+cd ~/.local
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --verbose mass8326
 ```
 
 ## Windows Registry

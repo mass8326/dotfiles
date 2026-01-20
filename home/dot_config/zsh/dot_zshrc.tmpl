@@ -11,7 +11,9 @@ alias gaf="git ls-files --modified --others --exclude-standard | fzf --print0 --
 
 plugins=(
   # Quality of life
-  direnv
+  {{ if lookPath "direnv" -}}
+    direnv
+  {{- end }}
   zsh-syntax-highlighting
   zsh-autosuggestions
   you-should-use
@@ -20,7 +22,9 @@ plugins=(
   # Utilities
   git
   chezmoi
-  fzf
+  {{ if lookPath "fzf" -}}
+    fzf
+  {{- end }}
   # Languages
   golang
   rust

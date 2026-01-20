@@ -1,5 +1,12 @@
+{{- if lookPath "nvim" -}}
 edit.command = "nvim"
+{{- else if lookPath "vi" -}}
+edit.command = "vi"
+{{- end -}}
+
+{{- if lookPath "zsh" }}
 cd.command = "zsh"
+{{- end }}
 
 [data.wants]
 desktop = {{ promptBoolOnce . "data.wants.desktop" "Do you want a desktop gui" | toToml }}
