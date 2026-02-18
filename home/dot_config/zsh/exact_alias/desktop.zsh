@@ -1,3 +1,4 @@
+alias lock="hyprlock &> /dev/null & systemctl suspend"
 function desktop() {
   local envs=()
   if (( $+commands[hyprland] )); then
