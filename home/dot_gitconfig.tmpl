@@ -1,0 +1,18 @@
+[user]
+  name = Magnus Reyes
+  email = me@reyma.dev
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEzwEDk0G5hUTyEqNxDBe5/ZHoE1kobx6dlU7+eSE88R
+[credential]
+  credentialStore = secretservice
+  helper = manager
+  helper = oauth
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = /home/mass/.ssh/allowed_signers
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/git/hobby/"]
+  path = {{ .chezmoi.homeDir }}/git/hobby/.gitconfig
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/git/personal/"]
+  path = {{ .chezmoi.homeDir }}/git/personal/.gitconfig
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/git/work/"]
+  path = {{ .chezmoi.homeDir }}/git/work/.gitconfig
