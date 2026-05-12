@@ -57,3 +57,9 @@ fi
   . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 [ -f "$HOME/.profile.local" ] && \
   . "$HOME/.profile.local"
+
+# LM Studio CLI
+if [ -d "/home/mass/.lmstudio/bin" ]; then
+  export PATH="$PATH:/home/mass/.lmstudio/bin"
+fi
+
