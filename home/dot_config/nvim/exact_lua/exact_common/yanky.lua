@@ -3,6 +3,7 @@ return {
   -- Conflicts with my desired yanky keymaps
   {
     "stevearc/aerial.nvim",
+    enabled = false,
     opts = {
       keymaps = {},
       on_attach = function()

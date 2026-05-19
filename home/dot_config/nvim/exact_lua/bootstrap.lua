@@ -3,14 +3,13 @@
 ---@type LazySpec
 local astro = {
   "AstroNvim/AstroNvim",
-  version = "^4",
+  version = "^6",
   import = "astronvim.plugins",
   ---@type AstroNvimOpts
   opts = {
     mapleader = " ",
     maplocalleader = ",",
     icons_enabled = true,
-    pin_plugins = nil,
     update_notifications = true,
   },
 }
