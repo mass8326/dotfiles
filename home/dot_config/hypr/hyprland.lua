@@ -1,3 +1,9 @@
+require("conf.autostart")
+require("conf.binds")
+require("conf.environment")
+require("conf.variables")
+require("conf.workspaces")
+
 -- Default monitor in case nwg-displays has not been used yet
 hl.monitor({
   output = "",
@@ -10,9 +16,3 @@ hl.monitor({
 -- Make sure to disable any VR HMDs
 require("monitors")
 require("workspaces")
-
-require("conf.autostart")
-require("conf.binds")
-require("conf.environment")
-require("conf.variables")
-require("conf.workspaces")
