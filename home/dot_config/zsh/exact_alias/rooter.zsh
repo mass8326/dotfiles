@@ -48,7 +48,7 @@ function _rtfn_get_script() {
     return 1
   fi
 
-  local raw=$(cat $1 | jq .scripts | sed '1d;$d' | fzf --prompt="$1 script 󰄾 " --height ~50% --layout=reverse --border)
+  local raw=$(cat $1 | jq .scripts | sed '1d;$d' | fzf --cycle --prompt="$1 script 󰄾 " --height ~50% --layout=reverse --border)
   if [[ -z $raw ]]; then
     echo "Exit: You didn't select a package.json script"
     return 1
@@ -68,7 +68,7 @@ function _rtfn_get_package() {
     echo "Error: No child packages or modules found"
     return 1
   else
-    _rt_package=$(echo $result | fzf --prompt="Search 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
+    _rt_package=$(echo $result | fzf --cycle --prompt="Search 󰄾 " --height ~50% --layout=reverse --border --tac --select-1)
   fi
 
   if [[ -z $_rt_package ]]; then
