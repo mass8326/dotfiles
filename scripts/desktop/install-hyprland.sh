@@ -42,6 +42,7 @@ packages=(
 paru -S --needed ${packages[@]}
 
 systemctl --user enable --now hypridle
+systemctl --user enable --now hyprpolkitagent
 
 (
   cd $(mktemp -d)
