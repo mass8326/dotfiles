@@ -1,0 +1,38 @@
+spawn-at-startup "waybar"
+hotkey-overlay {
+  skip-at-startup
+}
+input {
+    keyboard {
+        numlock
+        repeat-rate 50
+        repeat-delay 200
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+layout {
+    gaps 8
+    center-focused-column "never"
+    default-column-width { proportion 0.5; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    focus-ring {
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+}
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+screenshot-path "~/Pictures/Screenshots/%Y.%m.%d-%H.%M.%S.png"
+prefer-no-csd
+include "binds.kdl"
+include "monitors.kdl"

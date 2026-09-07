@@ -4,6 +4,9 @@ function desktop() {
   if (( $+commands[hyprland] )); then
     envs+=Hyprland
   fi
+  if (( $+commands[niri-session] )); then
+    envs+=Niri
+  fi
   if (( $+commands[gnome-session] )); then
     envs+=GNOME
   fi
@@ -14,6 +17,9 @@ function desktop() {
   case "$answer" in
     "Hyprland")
       uwsm start hyprland-uwsm.desktop
+      ;;
+    "Niri")
+      niri-session
       ;;
     "GNOME")
       gnome-session --no-reexec
