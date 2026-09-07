@@ -1,3 +1,4 @@
+require("conf.animations")
 require("conf.autostart")
 require("conf.binds")
 require("conf.environment")

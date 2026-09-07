@@ -46,11 +46,17 @@ hl.bind("SUPER + BACKSPACE", hl.dsp.window.close())
 hl.bind("SUPER + V", hl.dsp.window.float())
 hl.bind("SUPER + P", hl.dsp.window.pseudo())
 
--- Focus
+-- Window Focus
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
+
+-- Window Manipulation
+hl.bind("SUPER + M", hl.dsp.layout("fit expand"))
+hl.bind("SUPER + CTRL + M", hl.dsp.layout("fit all"))
+hl.bind("SUPER + CTRL + Left", hl.dsp.layout("swapcol l"))
+hl.bind("SUPER + CTRL + Right", hl.dsp.layout("swapcol r"))
 
 -- Workspace Switching
 hl.bind("SUPER + " .. 1, hl.dsp.focus({ workspace = 1 }))
