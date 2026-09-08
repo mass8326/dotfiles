@@ -14,7 +14,7 @@ hl.bind("SUPER + C", hl.dsp.exec_cmd("uwsm app -- code --ozone-platform=wayland 
 hl.bind("SUPER + D", hl.dsp.exec_cmd("uwsm app -- discord --ozone-platform=wayland"))
 
 -- Actions
-hl.bind("SUPER + L", hl.dsp.exec_cmd("uwsm app -- hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("noctalia msg session lock"))
 hl.bind("SUPER + U", hl.dsp.exec_cmd("uwsm app -- swaync-client -t"))
 hl.bind("CTRL + ALT + DELETE", hl.dsp.exit())
 hl.bind(

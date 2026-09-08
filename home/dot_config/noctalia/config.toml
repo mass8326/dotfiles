@@ -1,5 +1,5 @@
 [include]
-files = ["config/"]
+files = ["config/", "local.toml"]
 
 [accessibility]
 ui_scale = 1

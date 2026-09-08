@@ -36,7 +36,7 @@ padding = 6.0
 [widget.clock]
 scale = 1.25
 color = "secondary"
-format = "{:%Y/%m/%d %H:%M}"
+format = "{:%H:%M // %a // %b %-d}"
 
 [widget.launcher]
 color = "secondary"
