@@ -1,0 +1,102 @@
+[bar.default]
+start = ["launcher", "spacer_1", "workspaces", "spacer_1", "group:sysmon"]
+center = ["clock"]
+end = [
+  "media",
+  "spacer_1",
+  "tray",
+  "spacer_1",
+  "notifications",
+  "spacer_1",
+  "network",
+  "spacer_1",
+  "volume",
+  "spacer_1",
+  "session",
+]
+hover_highlight = false
+concave_edge_corners = true
+margin_edge = 0
+margin_ends = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
+radius_top_left = 0
+radius_top_right = 0
+scale = 1
+thickness = 35
+
+[[bar.default.capsule_group]]
+border = ""
+fill = "on_secondary"
+id = "sysmon"
+members = ["temp", "sysmon_cpu", "sysmon_gpu", "sysmon_ram"]
+opacity = 1.0
+padding = 6.0
+
+[widget.clock]
+scale = 1.25
+color = "secondary"
+format = "{:%Y/%m/%d %H:%M}"
+
+[widget.launcher]
+color = "secondary"
+
+[widget.media]
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network]
+color = "secondary"
+
+[widget.notifications]
+color = "secondary"
+
+[widget.session]
+color = "error"
+
+[widget.spacer_1]
+type = "spacer"
+
+[widget.temp]
+type = "sysmon"
+stat = "cpu_temp"
+glyph = "flame"
+display = "graph"
+show_label = false
+hover_highlight = false
+
+[widget.sysmon_cpu]
+type = "sysmon"
+stat = "cpu_usage"
+glyph = "cpu"
+display = "graph"
+show_label = false
+
+[widget.sysmon_gpu]
+type = "sysmon"
+stat = "gpu_usage"
+glyph = "image"
+display = "graph"
+show_label = false
+
+[widget.sysmon_ram]
+type = "sysmon"
+stat = "ram_pct"
+glyph = "cpu-2"
+display = "graph"
+show_label = false
+
+[widget.tray]
+capsule = true
+capsule_fill = "on_secondary"
+
+[widget.volume]
+color = "secondary"
+
+[widget.workspaces]
+inactive_pill_size = 1
+active_pill_size = 2
+pill_scale = 1
+capsule = true
+capsule_fill = "on_primary"
+show_labels = false

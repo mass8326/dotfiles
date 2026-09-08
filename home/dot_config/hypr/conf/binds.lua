@@ -3,12 +3,10 @@ local home = os.getenv("HOME")
 local terminal = "foot"
 local browser = "brave"
 local explorer = "nautilus"
-local launcher =
-  "pkill rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-11.rasi -run-command 'uwsm app -- {cmd}'"
-local winselect = "rofi -show window -theme ~/.config/rofi/launchers/type-1/style-11.rasi"
 
 -- Lauchers
-hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("uwsm app -- " .. launcher))
+hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher /win"))
 hl.bind("SUPER + T", hl.dsp.exec_cmd("uwsm app -- " .. terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd("uwsm app -- " .. browser))
 hl.bind("SUPER + F", hl.dsp.exec_cmd("uwsm app -- " .. explorer))
@@ -18,7 +16,6 @@ hl.bind("SUPER + D", hl.dsp.exec_cmd("uwsm app -- discord --ozone-platform=wayla
 -- Actions
 hl.bind("SUPER + L", hl.dsp.exec_cmd("uwsm app -- hyprlock"))
 hl.bind("SUPER + U", hl.dsp.exec_cmd("uwsm app -- swaync-client -t"))
-hl.bind("ALT + TAB", hl.dsp.exec_cmd("uwsm app -- " .. winselect))
 hl.bind("CTRL + ALT + DELETE", hl.dsp.exit())
 hl.bind(
   "PRINT",

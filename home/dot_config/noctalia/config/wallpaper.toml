@@ -1,0 +1,7 @@
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+directory = "~/.local/share/wallpapers"
+
+[wallpaper.default]
+path = "~/.local/share/wallpapers/wallpaper.jpg"
