@@ -6,7 +6,6 @@ packages=(
   # Desktop
   uwsm
   hyprland
-  hypridle
   hyprpicker
   hyprshot
   noctalia
@@ -40,6 +39,5 @@ packages=(
 
 paru -S --needed ${packages[@]}
 
-systemctl --user enable --now hypridle
 systemctl --user enable --now hyprpolkitagent
 

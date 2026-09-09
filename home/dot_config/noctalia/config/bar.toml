@@ -61,30 +61,30 @@ type = "spacer"
 type = "sysmon"
 stat = "cpu_temp"
 glyph = "flame"
-display = "graph"
-show_label = false
+visualization = "graph"
+show_value = false
 hover_highlight = false
 
 [widget.sysmon_cpu]
 type = "sysmon"
 stat = "cpu_usage"
 glyph = "cpu"
-display = "graph"
-show_label = false
+visualization = "graph"
+show_value = false
 
 [widget.sysmon_gpu]
 type = "sysmon"
 stat = "gpu_usage"
 glyph = "image"
-display = "graph"
-show_label = false
+visualization = "graph"
+show_value = false
 
 [widget.sysmon_ram]
 type = "sysmon"
 stat = "ram_pct"
 glyph = "cpu-2"
-display = "graph"
-show_label = false
+visualization = "graph"
+show_value = false
 
 [widget.tray]
 capsule = true
