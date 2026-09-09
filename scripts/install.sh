@@ -4,29 +4,26 @@ arch=(
   chezmoi
   greetd
   ncdu
+  noctalia-greeter
   nvim
   tmux
   zsh
 )
-pacman -S --needed ${arch[@]}
+sudo pacman -Syu --needed ${arch[@]}
 
-nix=(
-  nixpkgs#direnv
-  nixpkgs#nix-direnv
-)
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
-nix profile add ${nix[@]}
-
-timedatectl set-local-rtc true
-sudo systemctl enable greetd
-sudo timedatectl set-local-rtc true
-sudo tee /etc/greetd/config.toml <<EOF
+sudo systemctl enable --now greetd
+sudo useradd --system --shell /usr/bin/nologin --home-dir /var/lib/noctalia-greeter greeter 2>/dev/null || true
+sudo cp -a /etc/greetd/config.toml /etc/greetd/config.toml.bak 2>/dev/null || true
+sudo tee /etc/greetd/config.toml >/dev/null <<'EOF'
 [terminal]
 vt = 1
+
 [default_session]
-command = "agreety --cmd /bin/zsh"
+command = "/usr/bin/noctalia-greeter-session"
 user = "greeter"
 EOF
 
+sudo timedatectl set-local-rtc true # Improve compatibility with Windows dual boot
+
 chezmoi init --apply mass8326
-chsh -s /bin/zsh
+sudo chsh --shell /bin/zsh
