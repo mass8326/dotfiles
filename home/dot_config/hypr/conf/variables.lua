@@ -5,15 +5,14 @@ hl.config({
     border_size = 2,
     resize_on_border = true,
     allow_tearing = false,
-    layout = "scrolling",
+    layout = "dwindle",
     col = {
-      active_border = "rgb(33ccff)",
-      inactive_border = "rgba(595959aa)",
+      active_border = "rgb(C0A36E)",
+      inactive_border = "rgba(595959AA)",
     },
   },
-  cursor = {
-    no_warps = true,
-  },
+  dwindle = { preserve_split = true },
+  cursor = { no_warps = true },
   misc = {
     disable_splash_rendering = true,
     disable_hyprland_logo = true,
@@ -37,8 +36,6 @@ hl.config({
       vibrancy = 0.1696,
     },
   },
-  animations = { enabled = true },
-  scrolling = { wrap_focus = false, wrap_swapcol = false },
   input = {
     -- Keyboard
     numlock_by_default = true,
