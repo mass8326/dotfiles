@@ -1,7 +1,9 @@
 function tmr() {
   if [ -n "$TMUX" ]; then
-    eval $(tmux show-environment -s)
-    echo 'Env vars synced from tmux parent!'
+    contents="$(tmux show-environment -s)"
+    lines="$(echo $contents | wc -l)"
+    eval $contents
+    echo "$lines env var(s) synced from tmux parent!"
   else
     echo '$TMUX was not detected in your current shell!'
   fi
