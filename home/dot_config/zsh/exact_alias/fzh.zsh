@@ -38,8 +38,8 @@ function fzh-add() {
   local cmd=${${*//\\$'\n'/ }//$'\n'/ }
 
   if [[ -z ${cmd//[[:space:]]/} ]]; then
-    echo "Usage: fzh-add <command>"
-    return 1
+    "${EDITOR}" "${presets}"
+    return $?
   fi
 
   mkdir -p ${presets:h} || return 1
