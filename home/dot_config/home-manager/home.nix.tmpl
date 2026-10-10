@@ -7,7 +7,9 @@
     stateVersion = "25.11";
     # https://search.nixos.org/packages
     packages = with pkgs; [
+      chezmoi
       ncdu
+      neovim
       rsync
       {{- if .wants.dev }}
       # Dev Packages
