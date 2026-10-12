@@ -1,6 +1,7 @@
-{{- if lookPath "nvim" -}}
+encryption = "age"
+{{- if lookPath "nvim" }}
 edit.command = "nvim"
-{{- else if lookPath "vi" -}}
+{{- else if lookPath "vi" }}
 edit.command = "vi"
 {{- end -}}
 
@@ -11,3 +12,7 @@ cd.command = "zsh"
 [data.wants]
 desktop = {{ promptBoolOnce . "data.wants.desktop" "Do you want a desktop gui" | toToml }}
 dev = {{ promptBoolOnce . "data.wants.dev" "Do you want a dev environment" | toToml }}
+
+[age]
+identity = "{{ .chezmoi.homeDir }}/.config/chezmoi/age.key"
+recipient = "age1aqcdfvjxfdew9whdu7atkxmteavv9yvemthz2wssp7adeqx3yq0sx9mdxh"
