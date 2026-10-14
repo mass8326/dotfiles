@@ -10,6 +10,8 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = /home/mass/.ssh/allowed_signers
+[init]
+  defaultBranch = main
 [includeIf "gitdir:{{ .chezmoi.homeDir }}/git/hobby/"]
   path = {{ .chezmoi.homeDir }}/git/hobby/.gitconfig
 [includeIf "gitdir:{{ .chezmoi.homeDir }}/git/personal/"]
