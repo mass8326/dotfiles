@@ -16,6 +16,9 @@ return {
       maps.n["<Leader>ss"] = function()
         require("vscode-neovim").action("workbench.action.replaceInFiles")
       end
+      maps.n["<Leader>uw"] = function()
+        require("vscode-neovim").action("editor.action.toggleWordWrap")
+      end
       maps.n["[e"] = function()
         require("vscode-neovim").action("editor.action.marker.prev")
       end
