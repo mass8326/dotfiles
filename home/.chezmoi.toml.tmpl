@@ -13,6 +13,17 @@ cd.command = "zsh"
 desktop = {{ promptBoolOnce . "data.wants.desktop" "Do you want a desktop gui" | toToml }}
 dev = {{ promptBoolOnce . "data.wants.dev" "Do you want a dev environment" | toToml }}
 
+{{- if lookPath "nvim" }}
+[merge]
+  command = "nvim"
+  args = [
+    "-d",
+    "{{`{{ .Source }}`}}",
+    "{{`{{ .Target }}`}}",
+    "{{`{{ .Destination }}`}}",
+  ]
+{{- end }}
+
 [age]
 identity = "{{ .chezmoi.homeDir }}/.config/chezmoi/age.key"
 recipient = "age1aqcdfvjxfdew9whdu7atkxmteavv9yvemthz2wssp7adeqx3yq0sx9mdxh"
